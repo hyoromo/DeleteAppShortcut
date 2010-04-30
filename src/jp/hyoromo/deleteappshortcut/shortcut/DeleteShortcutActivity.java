@@ -16,7 +16,6 @@ import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -171,9 +170,6 @@ public class DeleteShortcutActivity extends Activity implements AdapterView.OnIt
         intent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, R.drawable.icon);
         intent.putExtra(Intent.EXTRA_SHORTCUT_NAME, appInfo.title);
 
-        // ショートカット設定
-        Parcelable iconResource = Intent.ShortcutIconResource.fromContext(this, R.drawable.icon);
-        intent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, iconResource);
         setResult(RESULT_OK, intent);
         finish();
     }
